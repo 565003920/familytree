@@ -1,14 +1,14 @@
 <template>
   <div class="album-page">
-    <div class="header">
+    <div class="page-header">
       <h1>家族相册</h1>
       <el-button type="primary" @click="showDialog = true" size="large">
         + 创建相册
       </el-button>
     </div>
 
-    <div class="album-grid">
-      <div v-for="album in albums" :key="album.id" class="album-card" @click="viewAlbum(album.id)">
+    <div class="card-grid">
+      <div v-for="album in albums" :key="album.id" class="card clickable album-card" @click="viewAlbum(album.id)">
         <div class="album-cover"></div>
         <h3>{{ album.name }}</h3>
         <p>{{ album.description }}</p>
@@ -100,65 +100,28 @@ const viewAlbum = (id) => {
 </script>
 
 <style scoped>
-.album-page {
-  min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  padding: 40px 20px;
-}
-
-.header {
-  max-width: 1200px;
-  margin: 0 auto 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.header h1 {
-  font-size: 36px;
-  font-weight: 700;
-  color: white;
-  margin: 0;
-}
-
-.album-grid {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 24px;
-}
-
 .album-card {
-  background: white;
-  border-radius: 16px;
+  padding: 0;
   overflow: hidden;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-}
-
-.album-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
 }
 
 .album-cover {
   width: 100%;
   height: 200px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, var(--color-accent), var(--color-primary-light));
 }
 
 .album-card h3 {
   font-size: 20px;
   font-weight: 600;
   margin: 16px;
-  color: #1a1a1a;
+  color: var(--color-text);
+  font-family: var(--font-serif);
 }
 
 .album-card p {
   font-size: 14px;
-  color: #666;
+  color: var(--color-text-secondary);
   margin: 0 16px 16px;
 }
 
