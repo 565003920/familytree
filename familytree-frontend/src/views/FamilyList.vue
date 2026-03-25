@@ -1,17 +1,17 @@
 <template>
   <div class="family-list-page">
-    <div class="header">
+    <div class="page-header">
       <h1>我的家族</h1>
       <el-button type="primary" @click="showDialog = true" size="large">
         <span>+ 创建家族</span>
       </el-button>
     </div>
 
-    <div class="family-grid">
+    <div class="card-grid">
       <div
         v-for="family in families"
         :key="family.id"
-        class="family-card"
+        class="card clickable"
         @click="viewFamily(family.id)"
       >
         <div class="card-header">
@@ -125,70 +125,26 @@ const viewFamily = (id) => {
 </script>
 
 <style scoped>
-.family-list-page {
-  min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  padding: 40px 20px;
-}
-
-.header {
-  max-width: 1200px;
-  margin: 0 auto 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.header h1 {
-  font-size: 36px;
-  font-weight: 700;
-  color: white;
-  margin: 0;
-  letter-spacing: 2px;
-}
-
-.family-grid {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 24px;
-}
-
-.family-card {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  border-radius: 16px;
-  padding: 24px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-}
-
-.family-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
-}
-
 .card-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 16px;
   padding-bottom: 16px;
-  border-bottom: 2px solid #f0f0f0;
+  border-bottom: 2px solid var(--color-surface);
 }
 
 .card-header h3 {
   font-size: 24px;
   font-weight: 600;
-  color: #1a1a1a;
+  color: var(--color-text);
+  font-family: var(--font-serif);
   margin: 0;
 }
 
 .surname {
   font-size: 16px;
-  color: #667eea;
+  color: var(--color-accent);
   font-weight: 600;
 }
 
@@ -206,13 +162,13 @@ const viewFamily = (id) => {
 
 .info-item .label {
   font-size: 14px;
-  color: #666;
+  color: var(--color-text-muted);
 }
 
 .info-item .value {
   font-size: 16px;
   font-weight: 600;
-  color: #1a1a1a;
+  color: var(--color-text);
 }
 
 .card-actions {
@@ -221,6 +177,6 @@ const viewFamily = (id) => {
   gap: 8px;
   margin-top: 16px;
   padding-top: 12px;
-  border-top: 1px solid #f0f0f0;
+  border-top: 1px solid var(--color-surface);
 }
 </style>
