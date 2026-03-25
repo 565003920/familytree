@@ -1,6 +1,6 @@
 <template>
   <div class="family-detail-page">
-    <div class="header">
+    <div class="page-header">
       <div class="title-section">
         <h1>{{ family.name }}</h1>
         <span class="surname">{{ family.surname }}氏</span>
@@ -18,9 +18,9 @@
       </div>
     </div>
 
-    <div class="members-grid">
-      <div v-for="member in members" :key="member.id" class="member-card">
-        <div class="member-avatar">
+    <div class="card-grid">
+      <div v-for="member in members" :key="member.id" class="card">
+        <div class="avatar large">
           {{ member.name.charAt(0) }}
         </div>
         <div class="member-info">
@@ -168,25 +168,6 @@ const handleDeleteMember = async (member) => {
 </script>
 
 <style scoped>
-.family-detail-page {
-  min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  padding: 40px 20px;
-}
-
-.header {
-  max-width: 1200px;
-  margin: 0 auto 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.actions {
-  display: flex;
-  gap: 12px;
-}
-
 .title-section {
   display: flex;
   align-items: center;
@@ -194,59 +175,24 @@ const handleDeleteMember = async (member) => {
 }
 
 .title-section h1 {
-  font-size: 36px;
+  font-size: 28px;
   font-weight: 700;
-  color: white;
+  color: var(--color-text);
+  font-family: var(--font-serif);
   margin: 0;
   letter-spacing: 2px;
 }
 
 .surname {
   font-size: 20px;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--color-accent);
   font-weight: 600;
-}
-
-.members-grid {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 24px;
-}
-
-.member-card {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  border-radius: 16px;
-  padding: 24px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-}
-
-.member-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-}
-
-.member-avatar {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 28px;
-  font-weight: 700;
-  color: white;
-  margin: 0 auto 16px;
 }
 
 .member-info h3 {
   font-size: 20px;
   font-weight: 600;
-  color: #1a1a1a;
+  color: var(--color-text);
   margin: 0 0 12px 0;
   text-align: center;
 }
@@ -255,7 +201,7 @@ const handleDeleteMember = async (member) => {
   display: flex;
   justify-content: space-between;
   padding: 8px 0;
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 1px solid var(--color-surface);
 }
 
 .info-row:last-child {
@@ -264,13 +210,13 @@ const handleDeleteMember = async (member) => {
 
 .info-row .label {
   font-size: 14px;
-  color: #666;
+  color: var(--color-text-muted);
 }
 
 .info-row .value {
   font-size: 14px;
   font-weight: 600;
-  color: #1a1a1a;
+  color: var(--color-text);
 }
 
 .member-actions {
@@ -279,7 +225,7 @@ const handleDeleteMember = async (member) => {
   gap: 8px;
   margin-top: 16px;
   padding-top: 12px;
-  border-top: 1px solid #f0f0f0;
+  border-top: 1px solid var(--color-surface);
 }
 </style>
 
