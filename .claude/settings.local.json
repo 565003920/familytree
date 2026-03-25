@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cat:*)",
+      "Bash(head:*)",
+      "Bash(java:*)",
+      "Bash(cd familytree-frontend:*)",
+      "Bash(cd:*)",
+      "Bash(git add:*)",
+      "Bash(git:*)"
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+# IDE
+.idea/
+*.iml
+.vscode/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Java / Maven
+familytree-backend/target/
+familytree-backend/uploads/
+*.class
+*.jar
+*.war
+
+# Node.js
+familytree-frontend/node_modules/
+familytree-frontend/dist/
+
+# Logs
+*.log
+
+# Environment
+.env
+.env.*
