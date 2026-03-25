@@ -1,8 +1,8 @@
 <template>
   <div class="family-tree-page">
-    <div class="header">
+    <div class="page-header">
       <h1>家族树</h1>
-      <el-button @click="$router.back()">返回</el-button>
+      <el-button @click="$router.push(`/family/${route.params.id}`)">返回家族详情</el-button>
     </div>
     <div id="tree-container" ref="treeContainer"></div>
   </div>
@@ -54,10 +54,10 @@ const renderTree = (members) => {
     .attr('transform', d => `translate(${d.y},${d.x})`)
 
   node.append('circle')
-    .attr('r', 6)
+    .attr('r', 10)
 
   node.append('text')
-    .attr('dy', -10)
+    .attr('dy', -16)
     .text(d => d.data.name)
 }
 
@@ -78,32 +78,10 @@ const buildHierarchy = (members) => {
 </script>
 
 <style scoped>
-.family-tree-page {
-  min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  padding: 40px 20px;
-}
-
-.header {
-  max-width: 1200px;
-  margin: 0 auto 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.header h1 {
-  font-size: 36px;
-  font-weight: 700;
-  color: white;
-  margin: 0;
-}
-
 #tree-container {
   background: white;
-  border-radius: 16px;
-  max-width: 1200px;
-  margin: 0 auto;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-surface);
   overflow: auto;
 }
 </style>
@@ -111,18 +89,19 @@ const buildHierarchy = (members) => {
 <style>
 .link {
   fill: none;
-  stroke: #667eea;
+  stroke: #8b7355;
   stroke-width: 2px;
 }
 
 .node circle {
-  fill: #764ba2;
-  stroke: #667eea;
+  fill: #c4a97d;
+  stroke: #8b7355;
   stroke-width: 2px;
 }
 
 .node text {
   font-size: 14px;
   font-weight: 600;
+  font-family: "Noto Serif SC", "Source Han Serif SC", "SimSun", serif;
 }
 </style>
