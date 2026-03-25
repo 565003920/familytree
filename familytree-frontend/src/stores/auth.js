@@ -3,7 +3,8 @@ import { ref, computed } from 'vue'
 
 export const useAuthStore = defineStore('auth', () => {
   const token = ref(localStorage.getItem('token') || '')
-  const user = ref(JSON.parse(localStorage.getItem('user') || 'null'))
+  const storedUser = localStorage.getItem('user')
+  const user = ref(storedUser && storedUser !== 'undefined' ? JSON.parse(storedUser) : null)
 
   const isAuthenticated = computed(() => !!token.value)
 
