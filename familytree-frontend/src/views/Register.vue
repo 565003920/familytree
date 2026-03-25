@@ -71,21 +71,9 @@ const handleRegister = async () => {
 </script>
 
 <style scoped>
-.register-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-.register-form {
-  width: 400px;
-}
-</style>
-
-<style scoped>
 .register-page {
   min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #8b7355 0%, #5c4a32 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -110,7 +98,8 @@ const handleRegister = async () => {
 .title {
   font-size: 32px;
   font-weight: 700;
-  color: #1a1a1a;
+  color: var(--color-text);
+  font-family: var(--font-serif);
   margin: 0 0 12px 0;
 }
 
@@ -119,7 +108,7 @@ const handleRegister = async () => {
   margin-top: 8px;
   height: 48px;
   font-size: 16px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, var(--color-accent), var(--color-primary-light));
   border: none;
 }
 
@@ -127,11 +116,11 @@ const handleRegister = async () => {
   text-align: center;
   margin-top: 24px;
   font-size: 14px;
-  color: #666;
+  color: var(--color-text-secondary);
 }
 
 .login-link a {
-  color: #667eea;
+  color: var(--color-accent);
   text-decoration: none;
 }
 </style>
