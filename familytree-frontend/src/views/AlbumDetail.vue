@@ -1,14 +1,14 @@
 <template>
   <div class="album-detail-page">
-    <div class="header">
+    <div class="page-header">
       <h1>相册详情</h1>
       <el-upload :http-request="uploadPhoto" :show-file-list="false">
         <el-button type="primary" size="large">+ 上传照片</el-button>
       </el-upload>
     </div>
 
-    <div class="photo-grid">
-      <div v-for="photo in photos" :key="photo.id" class="photo-card">
+    <div class="card-grid photo-grid">
+      <div v-for="photo in photos" :key="photo.id" class="card photo-card">
         <img :src="`http://localhost:8080${photo.url}`" />
         <div class="photo-info">
           <p class="photo-desc">{{ photo.description || '' }}</p>
@@ -94,40 +94,13 @@ const handleDeletePhoto = async (photo) => {
 </script>
 
 <style scoped>
-.album-detail-page {
-  min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  padding: 40px 20px;
-}
-
-.header {
-  max-width: 1200px;
-  margin: 0 auto 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.header h1 {
-  font-size: 36px;
-  font-weight: 700;
-  color: white;
-  margin: 0;
-}
-
 .photo-grid {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
 }
 
 .photo-card {
-  background: white;
-  border-radius: 12px;
+  padding: 0;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .photo-card img {
@@ -142,7 +115,7 @@ const handleDeletePhoto = async (photo) => {
 
 .photo-desc {
   font-size: 13px;
-  color: #666;
+  color: var(--color-text-secondary);
   margin: 0 0 8px;
   min-height: 20px;
 }
