@@ -69,7 +69,7 @@ const handleLogin = async () => {
 <style scoped>
 .login-page {
   min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #8b7355 0%, #5c4a32 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -106,14 +106,15 @@ const handleLogin = async () => {
 .title {
   font-size: 32px;
   font-weight: 700;
-  color: #1a1a1a;
+  color: var(--color-text);
+  font-family: var(--font-serif);
   margin: 0 0 12px 0;
   letter-spacing: 2px;
 }
 
 .subtitle {
   font-size: 14px;
-  color: #666;
+  color: var(--color-text-secondary);
   margin: 0;
 }
 
@@ -127,7 +128,7 @@ const handleLogin = async () => {
   height: 48px;
   font-size: 16px;
   font-weight: 600;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, var(--color-accent), var(--color-primary-light));
   border: none;
 }
 
@@ -135,11 +136,11 @@ const handleLogin = async () => {
   text-align: center;
   margin-top: 24px;
   font-size: 14px;
-  color: #666;
+  color: var(--color-text-secondary);
 }
 
 .register-link a {
-  color: #667eea;
+  color: var(--color-accent);
   text-decoration: none;
   font-weight: 600;
 }
